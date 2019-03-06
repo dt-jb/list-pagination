@@ -72,6 +72,7 @@ const appendPageLinks = (list) => {
     for (let i = 0; i < pagLinks.length; i++) {
       pagLinks[i].classList.remove("active");
     }
+
 };
 
 appendPageLinks();
