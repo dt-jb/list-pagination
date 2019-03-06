@@ -69,9 +69,13 @@ const appendPageLinks = (list) => {
     });
   }
   const pagLinks = document.querySelectorAll('a');
+
+  pageUL.addEventListener('click', (e) => {
     for (let i = 0; i < pagLinks.length; i++) {
       pagLinks[i].classList.remove("active");
     }
+    e.target.className = 'active';
+  });
 
 };
 
