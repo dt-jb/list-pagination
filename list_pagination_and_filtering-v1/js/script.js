@@ -48,7 +48,7 @@ const appendPageLinks = (list) => {
     pageLI.appendChild(pageA);
     pageA.textContent = i;
     pageA.addEventListener('click', () => {
-      showPages(studentList, i);
+      showPages(list, i);
     });
   }
 
@@ -65,4 +65,51 @@ const appendPageLinks = (list) => {
 document.addEventListener('DOMContentLoaded', () => {
   showPages(studentList, 1);
 });
-appendPageLinks();
+appendPageLinks(studentList);
+
+
+/* Below is my attempt to complete the exceeds expecations goals.  Unfortunately
+I didn't get there.  But it would be nice to know if I was on the right track...*/
+
+/*
+const headerDiv = document.getElementsByClassName('page-header');
+const searchBar = document.createElement('input');
+const searchButton = document.createElement('button');
+headerDiv[0].appendChild(searchBar);
+headerDiv[0].appendChild(searchButton);
+searchBar.className = 'student-search';
+searchBar.placeholder = 'Search students by name';
+searchButton.className = 'student-search';
+searchButton.textContent = 'Search';
+const noMatch = document.createElement('h3');
+const posSearch = [];
+const negSearch = [];
+
+searchButton.addEventListener('click', () => {
+
+  for (let i = 0; i < studentList.length; i++){
+    if (searchBar.value == studentList[i].firstElementChild.firstElementChild.nextElementSibling.textContent) {
+      posSearch.push(studentList[i]);
+      //studentList[i].style.display = 'none';
+    } else {
+      negSearch.push(studentList[i]);
+    }
+  }
+  if (posSearch.length > 0) {
+    for (let i = 0; i < posSearch.length; i++) {
+      posSearch[i].style.display = 'block';
+    }
+    for (let i = 0; i < negSearch.length; i++) {
+      negSearch[i].style.display = 'none';
+    }
+    appendPageLinks(posSearch);
+  }
+  if (posSearch.length == 0){
+    noMatch.textContent = 'No match found';
+    mainDiv[0].appendChild(noMatch);
+    for (let i = 0; i < negSearch.length; i++) {
+      negSearch[i].style.display = 'none';
+    }
+  }
+});
+*/
